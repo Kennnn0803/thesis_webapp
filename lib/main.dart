@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: const Color.fromRGBO(220, 220, 220, 1.0),
       ),
-      home: const LogInScreen(),
+      home: LogInScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thesis_webapp/reusable_widgets/reusable_widgets.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -8,20 +9,34 @@ class LogInScreen extends StatefulWidget {
 }
 
 class _LogInScreenState extends State<LogInScreen> {
+  TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _emailTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       body: Container(
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(220, 220, 220, 1.0),
-        ),
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.fromLTRB(
                 300, MediaQuery.of(context).size.height * 0.02, 300, 100),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                logoWidget("assets/images/securetrack_logo.png")
+                SecureTrackLogo("assets/images/securetrack_logo.png"),
+                const SizedBox(
+                  height: 50,
+                ),
+                reusableTextField("Enter UserName", Icons.person_outline, false,
+                    _emailTextController),
+                const SizedBox(
+                  height: 20,
+                ),
+                reusableTextField("Enter Password", Icons.lock_outline, true,
+                    _passwordTextController),
+                const SizedBox(
+                  height: 5,
+                ),
               ],
             ),
           ),
@@ -29,13 +44,4 @@ class _LogInScreenState extends State<LogInScreen> {
       ),
     );
   }
-}
-
-Image logoWidget(String ImageName) {
-  return Image.asset(
-    ImageName,
-    width: 500,
-    height: 500,
-    color: Color.fromRGBO(128, 0, 0, 1.0),
-  );
 }
