@@ -12,13 +12,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-            child: ElevatedButton(
-      child: Text("Logout"),
-      onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LogInScreen()));
-      },
-    )));
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Home Screen To",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              child: Text("Logout"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LogInScreen()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
