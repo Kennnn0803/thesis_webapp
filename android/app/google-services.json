@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "804267441478",
+    "project_id": "track-thesis",
+    "storage_bucket": "track-thesis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804267441478:android:0fa69abe92f8b66ccb7947",
+        "android_client_info": {
+          "package_name": "com.example.thesis_webapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcQnBxvUQjJsPouwkxAd5QJ7u_4CfmQQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
