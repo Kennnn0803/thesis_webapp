@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:thesis_webapp/pages/signup_screen.dart';
 import 'package:thesis_webapp/reusable_widgets/reusable_widgets.dart';
 
 class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+  const LogInScreen({Key? key}) : super(key: key);
 
   @override
-  State<LogInScreen> createState() => _LogInScreenState();
+  _LogInScreenState createState() => _LogInScreenState();
 }
 
 class _LogInScreenState extends State<LogInScreen> {
@@ -27,7 +28,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 const SizedBox(
                   height: 50,
                 ),
-                reusableTextField("Enter UserName", Icons.person_outline, false,
+                reusableTextField("Enter Username", Icons.person_outline, false,
                     _emailTextController),
                 const SizedBox(
                   height: 20,
@@ -35,13 +36,33 @@ class _LogInScreenState extends State<LogInScreen> {
                 reusableTextField("Enter Password", Icons.lock_outline, true,
                     _passwordTextController),
                 const SizedBox(
-                  height: 5,
+                  height: 20,
                 ),
+                signInSignUpButton(context, true, () {}),
+                signUpOption()
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  Row signUpOption() {
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const Text("No Account Yet?",
+          style: TextStyle(color: Color.fromARGB(240, 0, 0, 0))),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+        },
+        child: const Text(
+          "  Sign Up",
+          style: TextStyle(
+              color: Color.fromARGB(240, 0, 0, 0), fontWeight: FontWeight.bold),
+        ),
+      )
+    ]);
   }
 }
